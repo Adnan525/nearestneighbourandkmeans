@@ -5,7 +5,8 @@ def genCoord(li:list[str]):
     coordinates = []
     for line in li:
         # get rid of the new line char
-        targetLine = line[0:len(line)-2]
+        # last line won't have the \n character
+        targetLine = line[0:len(line)] if line == li[len(li)-1] else line[0:len(line)-1]
         tempString = targetLine.split(" ")
         tempList = []
         for val in tempString:

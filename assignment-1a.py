@@ -2,6 +2,7 @@
 import io_module as io
 import utility as util
 import makeCoordinates as gen
+import nearestNeighbour as near
 
 
 ### Defining the dataset.
@@ -53,4 +54,7 @@ if __name__ == "__main__":
 	targetRed = gen.genCoord(red_dataset)
 	targetBlue = gen.genCoord(blue_dataset)
 	targetUnknown = gen.genCoord(unknown_dataset)
-	print(targetRed)
+
+	#test
+	a1 = near.findNeighbour(targetRed, targetBlue, targetUnknown)
+	print(a1)

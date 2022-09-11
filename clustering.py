@@ -3,7 +3,7 @@
 # module to handle clustering
 #method available generate_K_cluster_centers, calculate_all_distances, find_shortest_distance, calculate_memberships, calculate_sum_2, calculate_cluster_centres
 
-#function to calculate distance
+# function to calculate distance
 def calculate_distance():
     distance = "" ##find distance
     return distance
