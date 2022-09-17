@@ -1,7 +1,7 @@
 # the function will accept a list and return a list of lists as coordinates
 # will convert string to float values
 
-def genCoord(li: list[str]):
+def genCoord(li):
     coordinates = []
     for line in li:
         # get rid of the new line char

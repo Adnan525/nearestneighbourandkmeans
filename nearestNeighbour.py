@@ -1,5 +1,5 @@
 import utility
-def findNeighbour(red : list[list[float]], blue : list[list[float]], unknown : list[list[float]]):
+def findNeighbour(red, blue, unknown):
     shortestRed = None
     shortestBlue = None
     result = []

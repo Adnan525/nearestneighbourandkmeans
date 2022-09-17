@@ -1,8 +1,13 @@
 import utility
 
 
-def genCluster(dataset: list[list[float]], center: list[list[float]]):
+def genCluster(dataset, center):
     cluster = []
+    d = {}
+    for i in range(0,len(center)):
+        d[i] = []
+
+
     belongingCluster = None
     leastDistance = None
     for point in dataset:
@@ -11,8 +16,16 @@ def genCluster(dataset: list[list[float]], center: list[list[float]]):
             if leastDistance is None or leastDistance > dist:
                 leastDistance = dist
                 belongingCluster = center.index(c)
-        cluster.append(belongingCluster)
+        d[belongingCluster].append(point)
         belongingCluster = None
         leastDistance = None
 
-    return cluster
+    return d
+
+def getAverageCluster(centerPoints: list[list[float]], di):
+    allKeys = di.keys()
+    for key in allKeys:
+        # list[list[float]]
+        temp = di[key]
+        valX = 0
+        valY = 0
