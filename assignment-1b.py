@@ -3,6 +3,7 @@ import tkinter
 import makeCoordinates as coord
 import genClusterCenter as genClusCent
 import clustering as cluster
+import kMeansClustering
 
 # Reading the Red, blue and unknown valude form the text file
 data_2c_2d = "datasets/data_2c_2d.txt"
@@ -28,7 +29,7 @@ cluster_center = cluster.generate_K_cluster_centres(cluster_size, sample_size)
 clusterCenterList = genClusCent.genCenter(cluster_center, read_data)
 
 if __name__ == "__main__":
-    print()
+    kmc = kMeansClustering.kMeans(read_data, 0.5, clusterCenterList)
 
 
 

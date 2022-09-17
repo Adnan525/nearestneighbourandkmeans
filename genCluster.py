@@ -50,8 +50,8 @@ def genAvgCenter(clusterDict):
 def genNewClusterCenter(old: list[list[float]], new: list[list[float]], threshold: int):
     isChangeNecessary = False
     for i in range(0, len(old)):
-        for j in range(0, len(i)):
-            if utility.dummyAbs(old[i][j] - new[i][j]) > utility(threshold):
-                result = True
+        for j in range(0, len(old[i])):
+            if utility.dummyAbs(old[i][j] - new[i][j]) > utility.dummyAbs(threshold):
+                isChangeNecessary = True
                 break
-    return result
+    return isChangeNecessary

@@ -3,7 +3,7 @@ import genCluster
 import clustering as cluster
 
 
-def kMeans(read_data: list[list[float]], cluster_size: int, threshold: float, clusterCenterList: list[list[float]]):
+def kMeans(read_data: list[list[float]], threshold: float, clusterCenterList: list[list[float]]):
 
     getCluster = genCluster.genCluster(read_data, clusterCenterList)
     newCenter = genCluster.genAvgCenter(getCluster)
