@@ -17,6 +17,7 @@ unknown_data =  ["datasets/unknown_2d.txt","datasets/unknown_4d.txt","datasets/u
 red_dataset = None
 blue_dataset = None
 unknown_dataset = None
+select_dimension = None
 
 
 ###Reading the dataset
@@ -50,11 +51,10 @@ while True:
 
 if __name__ == "__main__":
 
-	#all datasets are populated now
+	# all datasets are populated now
 	targetRed = gen.genCoord(red_dataset)
 	targetBlue = gen.genCoord(blue_dataset)
 	targetUnknown = gen.genCoord(unknown_dataset)
 
-	#test
 	a1 = near.findNeighbour(targetRed, targetBlue, targetUnknown)
-	print(a1)
+	io.writeToFile(targetUnknown, a1, select_dimension)

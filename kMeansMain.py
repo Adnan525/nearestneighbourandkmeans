@@ -1,6 +1,5 @@
 import genCluster
 import io_module as io
-import tkinter
 import makeCoordinates as coord
 import genClusterCenter as genClusCent
 import clustering as cluster
