@@ -1,12 +1,14 @@
 import utility
 
 
+# returns a dictionary where
+#   keys = center points
+#   values = list of points that belong to the center point
 def genCluster(dataset, center):
     cluster = []
     d = {}
-    for i in range(0,len(center)):
+    for i in range(0, len(center)):
         d[i] = []
-
 
     belongingCluster = None
     leastDistance = None
@@ -22,10 +24,34 @@ def genCluster(dataset, center):
 
     return d
 
-def getAverageCluster(centerPoints: list[list[float]], di):
-    allKeys = di.keys()
+
+# returns the average points of k number of clusters as a list[list[float]]
+def genAvgCenter(clusterDict):
+    allKeys = clusterDict.keys()
+    # point dimension
+    dim = len(clusterDict[0][0])
+    result = []
+
     for key in allKeys:
-        # list[list[float]]
-        temp = di[key]
-        valX = 0
-        valY = 0
+        avCenter = []
+        temp = clusterDict[key]
+        for i in range(0, dim):
+            su = 0
+            for point in temp:
+                su = su + point[i]
+            su = su / len(temp)
+            avCenter.append(su)
+        result.append(avCenter)
+    return result
+
+
+# takes a old = list[list[float]] and new = list[list[float]] and threshold = int
+# returns false or true
+def genNewClusterCenter(old: list[list[float]], new: list[list[float]], threshold: int):
+    isChangeNecessary = False
+    for i in range(0, len(old)):
+        for j in range(0, len(i)):
+            if utility.dummyAbs(old[i][j] - new[i][j]) > utility(threshold):
+                result = True
+                break
+    return result

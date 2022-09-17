@@ -12,8 +12,11 @@ def calculate_distance(point1, point2):
     return distance
 
 
-
-###function to find the cluster
+# function to find the cluster
 def find_cluster(point, centroids):
     clusture = []
     return clusture
+
+
+def dummyAbs(i: float):
+    return i if i > 0 else i * -1
