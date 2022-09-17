@@ -1,4 +1,6 @@
 import utility
+
+
 def findNeighbour(red, blue, unknown):
     shortestRed = None
     shortestBlue = None
@@ -6,9 +8,9 @@ def findNeighbour(red, blue, unknown):
 
     for un in unknown:
         for r in red:
-             dist = utility.calculate_distance(un, r)
-             if shortestRed is None or shortestRed > dist :
-                 shortestRed = dist
+            dist = utility.calculate_distance(un, r)
+            if shortestRed is None or shortestRed > dist:
+                shortestRed = dist
         for b in blue:
             dist = utility.calculate_distance(un, b)
             if shortestBlue is None or shortestBlue > dist:
