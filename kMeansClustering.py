@@ -1,6 +1,4 @@
-import genClusterCenter as genClusCent
 import genCluster
-import clustering as cluster
 
 
 def kMeans(read_data: list[list[float]], threshold: float, clusterCenterList: list[list[float]]):
@@ -9,6 +7,7 @@ def kMeans(read_data: list[list[float]], threshold: float, clusterCenterList: li
     newCenter = genCluster.genAvgCenter(getCluster)
     isNewCenterNecessary = genCluster.genNewClusterCenter(clusterCenterList, newCenter, threshold)
     if isNewCenterNecessary:
-        kMeans(read_data, threshold, newCenter)
+        return kMeans(read_data, threshold, newCenter)
     else:
         return getCluster
+
